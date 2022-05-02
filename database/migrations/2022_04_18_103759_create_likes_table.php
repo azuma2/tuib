@@ -17,7 +17,6 @@ class CreateLikesTable extends Migration
             $table->id();
             $table->integer('user_id')->nullable();
             $table->integer('post_id');
-            $table->boolean('check');
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
             

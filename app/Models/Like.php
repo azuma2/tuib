@@ -11,7 +11,7 @@ class Like extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','post_id','check'];
+    protected $fillable = ['user_id','post_id'];
 
     public static $rules = array(
         'user_id' => 'integer',
