@@ -14,7 +14,7 @@ class Comment extends Model
     protected $fillable = ['user_id','post_id', 'content'];
 
     public static $rules = array(
-        'user_id' => 'integer',
+        'user_id' => 'text',
         'post_id' => 'integer',
         'content' => 'required|max:120',
     );

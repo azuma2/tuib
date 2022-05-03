@@ -14,7 +14,7 @@ class Like extends Model
     protected $fillable = ['user_id','post_id'];
 
     public static $rules = array(
-        'user_id' => 'integer',
+        'user_id' => 'text',
         'post_id' => 'integer',
 
     );

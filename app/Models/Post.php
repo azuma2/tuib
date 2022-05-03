@@ -15,7 +15,7 @@ class Post extends Model
     protected $fillable = ['user_id', 'content'];
 
     public static $rules = array(
-        'user_id' => 'integer',
+        'user_id' => 'text',
         'content' => 'required|max:120',
     );
 
