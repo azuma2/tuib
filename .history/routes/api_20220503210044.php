@@ -14,16 +14,23 @@ Route::delete('/post/destroy', [PostController::class, 'destroy']);
 Route::post('/comment/store', [CommentController::class, 'store']);
 Route::get('/comment/show', [CommentController::class, 'show']);
 
+
 Route::post('/like/store', [LikeController::class, 'store']);
 Route::delete('/like/destroy', [LikeController::class, 'destroy']);
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 Route::delete('/like/destroy/{id}', [LikeController::class, 'destroy']);
+
 Route::delete('/post/destroy/{id}', [PostController::class, 'destroy']);
 
+
 Route::post('/user/store', [UserController::class, 'store']);
+
 
 Route::get('/relation', [POstController::class, 'relate']);

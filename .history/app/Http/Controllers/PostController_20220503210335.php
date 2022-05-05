@@ -23,9 +23,8 @@ public function index()
 public function store(Request $request)
 {
   $item = Post::create($request->all());
-  $post = Post::with(['user','likes'])->find($item)->first();
   return response()->json([
-    'data' => $post
+    'data' => $item
   ], 201);
 }
 
@@ -61,7 +60,7 @@ public function relate(Request $request)
 {
   $items = Like::all();
     return response()->json([
-      'items' => $items
+        'items' => $items
     ], 404);
 }
 

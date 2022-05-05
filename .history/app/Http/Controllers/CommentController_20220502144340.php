@@ -37,4 +37,4 @@ public function show(Comment $comment)
     }
 }
 
-}
+  }

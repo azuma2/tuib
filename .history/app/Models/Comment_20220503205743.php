@@ -19,13 +19,12 @@ class Comment extends Model
         'content' => 'required|max:120',
     );
 
-    public function user(){ 
+        public function user(){ 
         return $this->belongsTo('App\Models\user');
     }
 
-    public function post()
-    {
-      return $this->belongsTo(Post::class);
-    }
-
+      public function post()
+  {
+    return $this->belongsTo(Post::class);
+  }
 }

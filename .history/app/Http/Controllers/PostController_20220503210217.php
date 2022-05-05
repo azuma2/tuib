@@ -21,17 +21,20 @@ public function index()
 }
 
 public function store(Request $request)
-{
-  $item = Post::create($request->all());
-  $post = Post::with(['user','likes'])->find($item)->first();
-  return response()->json([
-    'data' => $post
-  ], 201);
-}
+  {
+    $item = Post::create($request->all());
+    
+    return response()->json([
+      'data' => $item
+    ], 201);
+  }
 
-public function destroy(Request $request)
-{
-  $item = Post::where('id', $request->id)->delete();
+
+
+  public function destroy(Request $request)
+  {
+    $item = Post::where('id', $request->id)->delete();
+    
     if ($item) {
       return response()->json([
         'message' => 'Deleted successfully',
@@ -41,11 +44,13 @@ public function destroy(Request $request)
         'message' => 'Not found',
       ], 404);
     }
-}
+  }
 
-public function show(Post $post)
-{
-  $item = Post::with(['user', 'comments','likes'])->find($post)->first();
+
+
+  public function show(Post $post)
+  {
+    $item = Post::with(['user', 'comments','likes'])->find($post)->first();
     if ($item) {
       return response()->json([
         'data' => $item
@@ -55,14 +60,14 @@ public function show(Post $post)
         'message' => 'Not found',
       ], 404);
     }
-}
+  }
 
 public function relate(Request $request) 
-{
-  $items = Like::all();
-    return response()->json([
-      'items' => $items
-    ], 404);
-}
+    {
+        $items = Like::all();
+        return response()->json([
+        'items' => $items
+      ], 404);
+    }
 
-}
+  }

@@ -24,14 +24,14 @@ class Like extends Model
     }
 
     
-    public function post()
-    {
-      return $this->belongsTo(Post::class);
-    }
+      public function post()
+  {
+    return $this->belongsTo(Post::class);
+  }
 
-    public function isLiked($user_id)
-    {
-    return $this->likes()->where('user_id', $user_id)->exists();
-    }
+  public function isLiked($user_id)
+{
+  return $this->likes()->where('user_id', $user_id)->exists();
+}
 
 }

@@ -8,27 +8,28 @@ use App\Models\Like;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserController;
 
-class CommentController extends Controller
+class UserController extends Controller
 {
 
 public function store(Request $request)
 {
-    $item = Comment::create($request->all());
+    $item = User::create($request->all());
     return response()->json([
-    'data' => $item
+    'name' => $item
+    
     ], 201);
 }
 
 
 
-public function show(Comment $comment)
+public function show(User $user)
 {
-    $item = Comment::find($comment);
+    $item = User::find($user);
     if ($item) {
     return response()->json([
-        'data' => $item
+        'name' => $item
     ], 200);
     } else {
     return response()->json([
@@ -37,4 +38,4 @@ public function show(Comment $comment)
     }
 }
 
-}
+  }
